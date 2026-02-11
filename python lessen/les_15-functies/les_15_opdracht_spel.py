@@ -19,10 +19,9 @@ def krijg_banana_score(aantal_bananen):
 
 def krijg_appel_score(aantal_appels, heeft_vergiftige_appel):
     """Geeft de score van een speler op basis van het aantal appel kaarten."""
-    return aantal_appels * 2
+    if heeft_vergiftige_appel:
+        return aantal_appels * (-2)
+    else:
+        return aantal_appels * 2
 
 
-# Berekent de totale score voor elke speler.
-speler1_score = krijg_score(3, 2, True)
-speler2_score = krijg_score(1, 5, False)
-print("Scores: speler 1=" + str(speler1_score) + ", speler 2=" + str(speler2_score))
